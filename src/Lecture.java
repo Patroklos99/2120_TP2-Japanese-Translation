@@ -40,31 +40,61 @@ public class Lecture {
 
     private static void verifierSyllabe(ArrayList tab) {
         String ligne = tab.get(0).toString();;
-        ligne = ligne.replaceAll(" ", "");
-        System.out.println(ligne);
+        ligne = enleverEspaces(ligne);
         System.out.println(ligne.length());
         for (int i = 1; i < ligne.length(); i++) {
-            System.out.println(ligne.charAt(i - 1));
-            System.out.println(ligne.charAt(i));
-            if (!(String.valueOf(ligne.charAt(i - 1))).matches("[(?![aeiouy])[a-z]]") ||
-                    !((String.valueOf(ligne.charAt(i))).matches("[aeiouyh']"))) {
-                System.out.println("entro");
-                finnerProgramme();
-            }
-            if ((String.valueOf(ligne.charAt(i))).matches("[yh]")) {
-                i++;
-                System.out.println(String.valueOf(ligne.charAt(i)));
-                if (!(String.valueOf(ligne.charAt(i))).matches("[aeiouy]")) {
-                    finnerProgramme();
-                }
-            }
-            if ((String.valueOf(ligne.charAt(i))).matches("[n]") &&
-                    (String.valueOf(ligne.charAt(i))).matches("[']")) {
-                i++;
-            }
+            i = validerSyllabeSimple(ligne, i);
+            i = validerSyllabecomposé(ligne, i);
+            i = validerSyllabeN(ligne, i);
+            i = validerSyllabeUnique(ligne, i);
             i++;
         }
 
+    }
+
+    private static int validerSyllabeUnique(String ligne, int i) {
+        if (i < ligne.length()-1) {
+            if ((String.valueOf(ligne.charAt(i))).matches("[aeiou]") &&
+                    (String.valueOf(ligne.charAt(i + 1))).matches("[aeiou]")) {
+                System.out.println("silaba unica: " + (ligne.charAt(i)));
+                i++;
+            }
+        }
+        return i;
+    }
+
+    private static int validerSyllabeN(String ligne, int i) {
+        if ((String.valueOf(ligne.charAt(i))).matches("[n]") &&
+                (String.valueOf(ligne.charAt(i+1))).matches("[']")){
+            i++;
+        }
+        return i;
+    }
+
+    private static int validerSyllabecomposé(String ligne, int i) {
+
+        if ((String.valueOf(ligne.charAt(i))).matches("[yh]")) {
+            i++;
+            if (!(String.valueOf(ligne.charAt(i))).matches("[aeiouy]")) {
+                finirProgramme();
+            }
+            System.out.print((ligne.charAt(i-2)));
+            System.out.print((ligne.charAt(i-1)));
+            System.out.print((ligne.charAt(i)));
+            System.out.println();
+        }
+        return i;
+    }
+
+    private static int validerSyllabeSimple(String ligne, int i) {
+        if (!(String.valueOf(ligne.charAt(i - 1))).matches("[(?![aeiouy])[a-z]]") ||
+                !((String.valueOf(ligne.charAt(i))).matches("[aeiouyh']"))) {
+            finirProgramme();
+        }
+        System.out.print((ligne.charAt(i-1)));
+        System.out.print((ligne.charAt(i)));
+        System.out.println();
+        return i++;
     }
 
     private static String enleverEspaces(String ligne) {
@@ -129,7 +159,7 @@ public class Lecture {
         }
     }
 
-    public static void finnerProgramme() {
+    public static void finirProgramme() {
         System.out.println("Erreur, Il y a un objet innattendu dans votre liste, le programme se termineraaa");
         System.exit(-1);
     }
