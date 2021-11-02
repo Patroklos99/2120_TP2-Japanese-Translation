@@ -36,7 +36,7 @@ public class Principal {
 
     /** Crée la classe PolynomeUn ou le calcule avec la premiere formule sera fait.
      *
-     * @param tab tableau (arraylist) contenant les valeurs du fichier lu.
+     * @param tab tableau (arraylist) contenant les valeurs du fichier lu
      */
     public static void creerClasseDegreUn(ArrayList<Double> tab) {
         PolynomeUn un = new PolynomeUn(tab);
