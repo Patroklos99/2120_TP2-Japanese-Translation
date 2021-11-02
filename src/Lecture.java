@@ -23,7 +23,7 @@ public class Lecture {
     public static ArrayList lireFichier(String nom){
         ArrayList<Double> tabValeur = new ArrayList<>();
         try {     Path path = FileSystems.getDefault().getPath(nom);
-            verifierFichierReel(path);
+            verifierFichier(path);
             Scanner sc = new Scanner(Files.newBufferedReader(path));
             sc.useLocale( Locale.CANADA );
             ecrireValeurs(sc, tabValeur);
@@ -42,10 +42,14 @@ public class Lecture {
      * @param path contient le chemin relatif du fichier fourni.
      * <code>file, contient le chemin relatif du fichier fourni, sert à verifier l'existance de celui-ci</code>
      */
-    private static void verifierFichierReel(Path path) {
+    private static void verifierFichier(Path path) {
         File file = new File(String.valueOf(path));
+        System.out.println(file);
         if (!file.exists()){
             msgErrFichier();
+        }
+        if(!file.toString().matches("^.*\\.(txt)$")){
+            System.out.println("Le fichier nest pas de format \".txt\" Le programme se terminera maintenant, bonne journnée.");
         }
     }
 
