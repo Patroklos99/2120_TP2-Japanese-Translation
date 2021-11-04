@@ -27,8 +27,8 @@ public class Lecture {
             Path path = FileSystems.getDefault().getPath(nom);
             verifierFichier(path);
             Scanner sc = new Scanner(Files.newBufferedReader(path));
-            ecrireValeurs(sc, tab);
-            verifierSyllabe(tab);
+            ecrirePhrases(sc, tab);
+            validerPhrases(tab);
             sc.close();
         } catch (InvalidPathException e) {
             // Traitement d'erreur ici.
@@ -38,67 +38,22 @@ public class Lecture {
         return tab;
     }
 
-    private static void verifierSyllabe(ArrayList tab) {
-        String ligne = tab.get(0).toString();;
-        ligne = enleverEspaces(ligne);
-        System.out.println(ligne.length());
-        for (int i = 1; i < ligne.length(); i++) {
-            i = validerSyllabeSimple(ligne, i);
-            i = validerSyllabecomposé(ligne, i);
-            i = validerSyllabeN(ligne, i);
-            i = validerSyllabeUnique(ligne, i);
-            i++;
-        }
-
-    }
-
-    private static int validerSyllabeUnique(String ligne, int i) {
-        if (i < ligne.length()-1) {
-            if ((String.valueOf(ligne.charAt(i))).matches("[aeiou]") &&
-                    (String.valueOf(ligne.charAt(i + 1))).matches("[aeiou]")) {
-                System.out.println("silaba unica: " + (ligne.charAt(i)));
-                i++;
-            }
-        }
-        return i;
-    }
-
-    private static int validerSyllabeN(String ligne, int i) {
-        if ((String.valueOf(ligne.charAt(i))).matches("[n]") &&
-                (String.valueOf(ligne.charAt(i+1))).matches("[']")){
-            i++;
-        }
-        return i;
-    }
-
-    private static int validerSyllabecomposé(String ligne, int i) {
-
-        if ((String.valueOf(ligne.charAt(i))).matches("[yh]")) {
-            i++;
-            if (!(String.valueOf(ligne.charAt(i))).matches("[aeiouy]")) {
+    private static void validerPhrases(ArrayList tab) {
+        enleverEspaces(tab);
+        for (Object o : tab) {
+            if (!o.toString().matches("^[a-zA-Z]+(['])?([a-zA-Z]+)?$"))
                 finirProgramme();
-            }
-            System.out.print((ligne.charAt(i-2)));
-            System.out.print((ligne.charAt(i-1)));
-            System.out.print((ligne.charAt(i)));
-            System.out.println();
         }
-        return i;
     }
 
-    private static int validerSyllabeSimple(String ligne, int i) {
-        if (!(String.valueOf(ligne.charAt(i - 1))).matches("[(?![aeiouy])[a-z]]") ||
-                !((String.valueOf(ligne.charAt(i))).matches("[aeiouyh']"))) {
-            finirProgramme();
-        }
-        System.out.print((ligne.charAt(i-1)));
-        System.out.print((ligne.charAt(i)));
-        System.out.println();
-        return i++;
-    }
 
-    private static String enleverEspaces(String ligne) {
-        return ligne.replaceAll(" ", "");
+    private static void enleverEspaces(ArrayList tab) {
+        for (int i = 0; i < tab.size(); i++) {
+            String ligne = tab.get(i).toString();
+            ligne = ligne.replaceAll(" ", "");
+            tab.set(i, ligne);
+        }
+        System.out.println(tab);
     }
 
     /**
@@ -119,20 +74,21 @@ public class Lecture {
     /**
      * Ecrit les valeurs du fichier fourni dans un seul tableau.
      *
-     * @param sc objet de type scanner, sert a verifier le contenu des lignes lues du fichier.
+     * @param sc  objet de type scanner, sert a verifier le contenu des lignes lues du fichier.
      * @param tab tableau ou les valeurs seront placées.
      */
-    public static void ecrireValeurs(Scanner sc, ArrayList tab) {
+    public static void ecrirePhrases(Scanner sc, ArrayList tab) {
         while (sc.hasNextLine()) {
-            if (sc.hasNextLine())
-                tab.add(sc.nextLine());
-            else {
-                tab.add(sc.nextLine());
-                errListe(tab);
-            }
+            tab.add(sc.nextLine());
         }
+        tableauVide(tab);
     }
 
+    private static void tableauVide(ArrayList tab) {
+        if (tab.isEmpty()) {
+            System.out.println("Le tableau semble être vide, le programme se terminera");
+        }
+    }
 
     /**
      * Affiche msg d'erreur si le fichier n'existe pas et informe l'usager des possibles erreurs dans la saisie.
@@ -143,20 +99,6 @@ public class Lecture {
                 " S'il existe veuillez le reecrire tout de suite apres le message" +
                 " d'entree, sans faire espace ou Enter.");
         System.exit(-1);
-    }
-
-    /**
-     * Verifie si le contenu du tabValeur est valide, autrement il affiche un message d'erreur et arrete le programme.
-     *
-     * @param tab tableau ou les valeurs du fichier sont deja placées.
-     */
-    public static void errListe(ArrayList tab) {
-        for (int i = 0; i <= tab.size(); i++) {
-            if (!tab.get(i).toString().matches("[0-9]+")) {
-                System.out.println("Erreur, Il y a un objet inattendu dans votre liste.");
-                System.exit(-1);
-            }
-        }
     }
 
     public static void finirProgramme() {
