@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Principal {
 
     /** Lance le programme principal et tous le code source du deroulement
@@ -14,7 +13,8 @@ public class Principal {
         Scanner clavier = new Scanner( System.in );
         String nom = clavier.nextLine();
         clavier.close();
-        ArrayList<Double> tab = Lecture.lireFichier(nom);
+        ArrayList<String> tab = Lecture.lireFichier(nom);
+        Syllabe syllabe = new Syllabe(tab);
         //reechantillonage(tab);
     }
 

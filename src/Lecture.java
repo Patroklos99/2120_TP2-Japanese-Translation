@@ -5,7 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -54,7 +53,6 @@ public class Lecture {
             ligne = ligne.replaceAll(" ", "");
             tab.set(i, ligne);
         }
-        System.out.println(tab);
     }
 
     /**
@@ -73,13 +71,6 @@ public class Lecture {
         fichierVide(file);
     }
 
-
-    /**
-     * Ecrit les valeurs du fichier fourni dans un seul tableau.
-     *
-     * @param sc  objet de type scanner, sert a verifier le contenu des lignes lues du fichier.
-     * @param tab tableau ou les valeurs seront placées.
-     */
     public static void ecrirePhrases(Scanner sc, ArrayList tab) {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
