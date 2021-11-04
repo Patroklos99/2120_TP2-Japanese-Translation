@@ -41,11 +41,12 @@ public class Lecture {
     private static void validerPhrases(ArrayList tab) {
         enleverEspaces(tab);
         for (Object o : tab) {
-            if (!o.toString().matches("^([a-zA-Z]+([']+)?([a-zA-Z]+)?)+"))
+            if (!o.toString().matches("^([a-zA-Z]+([']+|[’]+)?([a-zA-Z]+)?)+") ||
+                    Character.toString(o.toString().charAt(0)).matches("[']|[’]") ||
+                    Character.toString(o.toString().charAt(1)).matches("[']|[’]"))
                 finirProgramme();
         }
     }
-
 
     private static void enleverEspaces(ArrayList tab) {
         for (int i = 0; i < tab.size(); i++) {
@@ -66,8 +67,9 @@ public class Lecture {
         File file = new File(String.valueOf(path));
         if (!file.exists())
             msgErrFichier();
-        if (!file.toString().matches("^.*\\.(txt)$"))
+        if (!file.toString().matches("^.*\\.(txt)$")) {
             System.out.println("Le fichier nest pas de format \".txt\" Le programme se terminera, bonne journnée.");
+        }
         fichierVide(file);
     }
 
