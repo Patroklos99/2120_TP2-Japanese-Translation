@@ -68,6 +68,7 @@ public class Lecture {
             msgErrFichier();
         if (!file.toString().matches("^.*\\.(txt)$"))
             System.out.println("Le fichier nest pas de format \".txt\" Le programme se terminera, bonne journnée.");
+        fichierVide(file);
     }
 
 
@@ -81,12 +82,12 @@ public class Lecture {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
         }
-        tableauVide(tab);
     }
 
-    private static void tableauVide(ArrayList tab) {
-        if (tab.isEmpty()) {
-            System.out.println("Le tableau semble être vide, le programme se terminera");
+    private static void fichierVide(File file) {
+        if (file.length() == 0) {
+            System.out.println("Le fichier semble être vide, le programme se terminera.");
+            System.exit(-1);
         }
     }
 
