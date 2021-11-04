@@ -41,7 +41,7 @@ public class Lecture {
     private static void validerPhrases(ArrayList tab) {
         enleverEspaces(tab);
         for (Object o : tab) {
-            if (!o.toString().matches("^[a-zA-Z]+(['])?([a-zA-Z]+)?$"))
+            if (!o.toString().matches("^([a-zA-Z]+([']+)?([a-zA-Z]+)?)+"))
                 finirProgramme();
         }
     }
