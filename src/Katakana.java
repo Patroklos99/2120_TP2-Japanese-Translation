@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class Hiragana {
+public class Katakana {
     protected String syllabe;
     protected Map<String, String> tabHiragana = new HashMap<>();
 
-    public Hiragana(String syllabe) {
+    public Katakana(String syllabe) {
         this.syllabe = syllabe;
         remplirTabHiragana();
         //System.out.println(tabHiragana);
@@ -12,9 +12,9 @@ public class Hiragana {
     }
 
     private void afficherSyllabes() {
-            if (tabHiragana.containsKey(syllabe)) {
-                System.out.println("La clé est " + syllabe + ", La valeur est " + tabHiragana.get(syllabe));
-            }
+        if (tabHiragana.containsKey(syllabe)) {
+            System.out.println("La clé est " + syllabe + ", La valeur est " + tabHiragana.get(syllabe));
+        }
 
 
     }
@@ -93,6 +93,5 @@ public class Hiragana {
         tabHiragana.put("pe", "'&#&12410;'");
         tabHiragana.put("po", "'&#&12413;'");
     }
-
 
 }

@@ -8,7 +8,6 @@ public class Syllabe {
     public Syllabe(ArrayList<String> tab) {
         this.tab = tab;
         remplirTableaux();
-        Hiragana hiragana = new Hiragana(tabSyllabes);
     }
 
     private void remplirTableaux() {
@@ -18,6 +17,15 @@ public class Syllabe {
     }
 
     private void trierSyllabesAlphabet() {
+        for (String syllabe : tabSyllabes) {
+            //System.out.println(syllabe);
+            if (Character.toString(syllabe.charAt(0)).matches("[a-z]")) {
+                Hiragana hiragana = new Hiragana(syllabe);
+            }
+            else {
+                Katakana katakana = new Katakana(syllabe);
+            }
+        }
 
     }
 
@@ -33,18 +41,19 @@ public class Syllabe {
                     j++;
                 } else if (Character.toString(ligne.charAt(j + 1)).matches("[aeiou]") &&
                         Character.toString(ligne.charAt(j)).matches("[(?![aeiou])[a-zA-Z]]")) {
-                    tabSyllabes.add(""+ (ligne.charAt(j)) + (ligne.charAt(j+1)));
+                    tabSyllabes.add("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
                     System.out.println("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
                     j += 2;
                 } else if (Character.toString(ligne.charAt(j + 2)).matches("[aeiou]") &&
                         Character.toString(ligne.charAt(j + 1)).matches("[yhs]")) {
-                    tabSyllabes.add(""+ (ligne.charAt(j)) + (ligne.charAt(j+1)) + ((ligne.charAt(j+2))));
+                    tabSyllabes.add("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)) + ((ligne.charAt(j + 2))));
                     System.out.println("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)) + (ligne.charAt(j + 2)));
-                    j +=3;
+                    j += 3;
                 } else {
                     System.out.println("pas une syllabe valide");
                     System.exit(-1);
-                }j--;
+                }
+                j--;
             }
         }
     }
