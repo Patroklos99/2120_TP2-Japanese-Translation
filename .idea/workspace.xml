@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a109ad65-16a7-40ca-8622-7bbec0ae1f07" name="Changes" comment="Ajout de HashMap, + class Hiragana">
-      <change afterPath="$PROJECT_DIR$/src/Katakana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prog-TP2/Hiragana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prog-TP2/Hiragana.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Prog-TP2/Syllabe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prog-TP2/Syllabe.class" afterDir="false" />
+    <list default="true" id="a109ad65-16a7-40ca-8622-7bbec0ae1f07" name="Changes" comment="modif mineur">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hiragana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hiragana.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Syllabe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Syllabe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +23,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="20PrC45igRfmkYMl7hFJSxlkIIY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -54,6 +56,19 @@
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="Prog-TP2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Prog-TP2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Prog-TP2" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

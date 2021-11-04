@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Hiragana {
     protected String syllabe;
+    protected String syllabeUnicode;
     protected Map<String, String> tabHiragana = new HashMap<>();
 
     public Hiragana(String syllabe) {
@@ -13,9 +14,9 @@ public class Hiragana {
 
     private void afficherSyllabes() {
             if (tabHiragana.containsKey(syllabe)) {
+                syllabeUnicode = tabHiragana.get(syllabe);
                 System.out.println("La clé est " + syllabe + ", La valeur est " + tabHiragana.get(syllabe));
             }
-
 
     }
 
@@ -92,6 +93,11 @@ public class Hiragana {
         tabHiragana.put("pu", "'&#&12407;'");
         tabHiragana.put("pe", "'&#&12410;'");
         tabHiragana.put("po", "'&#&12413;'");
+    }
+
+    @Override
+    public String toString() {
+        return syllabeUnicode;
     }
 
 

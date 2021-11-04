@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Syllabe {
     protected ArrayList<String> tab;
     protected ArrayList<String> tabSyllabes = new ArrayList<>();
+    protected ArrayList<String> tabUnicodes = new ArrayList<>();
 
 
     public Syllabe(ArrayList<String> tab) {
@@ -21,11 +22,14 @@ public class Syllabe {
             //System.out.println(syllabe);
             if (Character.toString(syllabe.charAt(0)).matches("[a-z]")) {
                 Hiragana hiragana = new Hiragana(syllabe);
+                tabUnicodes.add(hiragana.toString());
+                System.out.println(hiragana);
             }
             else {
                 Katakana katakana = new Katakana(syllabe);
             }
         }
+        System.out.println(tabUnicodes);
 
     }
 
