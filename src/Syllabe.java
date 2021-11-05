@@ -56,22 +56,27 @@ public class Syllabe {
             String ligne = tab.get(i);
             ligne += "-+";
             for (int j = 0; j + 1 < ligne.length(); j++) {
-                if (Character.toString(ligne.charAt(j)).matches("[aeiou]|[-]")) {
+                if (Character.toString(ligne.charAt(j)).matches("[aeiou]|[AEIOU]|[-]")) {
                     tabSyllabes.add(Character.toString(ligne.charAt(j)));
                     //System.out.println("" + (ligne.charAt(j)));
                     j++;
-                } else if (Character.toString(ligne.charAt(j + 1)).matches("[aeiou]") &&
+                } else if (Character.toString(ligne.charAt(j + 1)).matches("[aeiou]|[AEIOU]") &&
                         Character.toString(ligne.charAt(j)).matches("[(?![aeiou])[a-zA-Z]]")) {
                     tabSyllabes.add("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
                     //System.out.println("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
                     j += 2;
-                } else if (Character.toString(ligne.charAt(j + 2)).matches("[aeiou]") &&
-                        Character.toString(ligne.charAt(j + 1)).matches("[yhs]")) {
+                }  else if (Character.toString(ligne.charAt(j + 1)).matches("[']") &&
+                        Character.toString(ligne.charAt(j)).matches("[n]|[N]")) {
+                    tabSyllabes.add("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
+                    //System.out.println("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)));
+                    j += 2;
+                }else if (Character.toString(ligne.charAt(j + 2)).matches("[aeiou]|[AEIOU]") &&
+                        Character.toString(ligne.charAt(j + 1)).matches("[yhs]|[YHS]")) {
                     tabSyllabes.add("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)) + ((ligne.charAt(j + 2))));
                     //System.out.println("" + (ligne.charAt(j)) + (ligne.charAt(j + 1)) + (ligne.charAt(j + 2)));
                     j += 3;
                 } else {
-                    System.out.println("Il semble avoir une syllabe non valide. Le programme se terminera.");
+                    System.out.println("Il semble avoir une syllabeeee non valide. Le programme se terminera.");
                     System.exit(-1);
                 }
                 j--;

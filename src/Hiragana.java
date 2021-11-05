@@ -12,10 +12,12 @@ public class Hiragana {
     }
 
     private void obtenirUnicode() {
+        syllabe = syllabe.toLowerCase();
+        System.out.println("silaba Hiragana:      "+syllabe);
         if (tabHiragana.containsKey(syllabe)) {
             syllabeUnicode = tabHiragana.get(syllabe);
         } else {
-            System.out.println("Une des syllabes Hiragana n'est pas valide, le programme se terminera.");
+            System.out.println("La syllabe Hiragana ("+syllabe+ ") n'est pas valide, le programme se terminera. じゃあね!");
             System.exit(-1);
         }
     }
@@ -93,6 +95,7 @@ public class Hiragana {
         tabHiragana.put("pu", "&#12407;");
         tabHiragana.put("pe", "&#12410;");
         tabHiragana.put("po", "&#12413;");
+        tabHiragana.put("n'", "&#12435;");
     }
 
     @Override

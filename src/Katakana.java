@@ -13,10 +13,12 @@ public class Katakana {
 
     private void obtenirUnicode() {
         syllabe = syllabe.toLowerCase();
+        System.out.println("silaba Katakana:      "+syllabe);
         if (tabKatakana.containsKey(syllabe)) {
             syllabeUnicode = tabKatakana.get(syllabe);
         } else {
-            System.out.println("Une des syllabes katakana n'est pas valide, le programme se terminera.");
+            System.out.println("La syllabe katakana ("+syllabe+")  n'est pas valide, le programme se terminera. " +
+                    "じゃあね!");
             System.exit(-1);
         }
     }
@@ -94,6 +96,7 @@ public class Katakana {
         tabKatakana.put("pu", "&#12503;");
         tabKatakana.put("pe", "&#12506;");
         tabKatakana.put("po", "&#12509;");
+        tabKatakana.put("n'", "&#12531;");
         tabKatakana.put("-", "         </dt>\n    </tr>\n    <tr>\n        <dt>");
     }
 
