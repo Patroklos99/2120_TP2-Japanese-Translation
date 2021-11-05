@@ -96,7 +96,7 @@ public class Lecture {
     }
 
     public static void finirProgramme() {
-        System.out.println("Erreur, Il y a un objet innattendu dans votre liste, le programme se termineraaa");
+        System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se terminera.");
         System.exit(-1);
     }
 

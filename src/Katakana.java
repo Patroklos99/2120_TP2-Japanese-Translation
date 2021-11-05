@@ -2,96 +2,104 @@ import java.util.*;
 
 public class Katakana {
     protected String syllabe;
-    protected Map<String, String> tabHiragana = new HashMap<>();
+    protected String syllabeUnicode;
+    protected Map<String, String> tabKatakana = new HashMap<>();
 
     public Katakana(String syllabe) {
         this.syllabe = syllabe;
-        remplirTabHiragana();
-        //System.out.println(tabHiragana);
-        afficherSyllabes();
+        remplirTabKatakana();
+        obtenirUnicode();
     }
 
-    private void afficherSyllabes() {
-        if (tabHiragana.containsKey(syllabe)) {
-            System.out.println("La clé est " + syllabe + ", La valeur est " + tabHiragana.get(syllabe));
+    private void obtenirUnicode() {
+        syllabe = syllabe.toLowerCase();
+        if (tabKatakana.containsKey(syllabe)) {
+            syllabeUnicode = tabKatakana.get(syllabe);
+        } else {
+            System.out.println("Une des syllabes katakana n'est pas valide, le programme se terminera");
+            System.exit(-1);
         }
-
-
     }
 
-    private void remplirTabHiragana() {
-        tabHiragana.put("a", "'&#&12354;'");
-        tabHiragana.put("i", "'&#&12356;'");
-        tabHiragana.put("u", "'&#&12358;'");
-        tabHiragana.put("e", "'&#&12360;'");
-        tabHiragana.put("o", "'&#&12362;'");
-        tabHiragana.put("ka", "'&#&12363;'");
-        tabHiragana.put("ki", "'&#&12365;'");
-        tabHiragana.put("ku", "'&#&12367;'");
-        tabHiragana.put("ke", "'&#&12369;'");
-        tabHiragana.put("ko", "'&#&12371;'");
-        tabHiragana.put("sa", "'&#&12373;'");
-        tabHiragana.put("shi", "'&#&1275;'");
-        tabHiragana.put("su", "'&#&12377;'");
-        tabHiragana.put("se", "'&#&12379;'");
-        tabHiragana.put("so", "'&#&12381;'");
-        tabHiragana.put("ta", "'&#&12383;'");
-        tabHiragana.put("chi", "'&#&12385;'");
-        tabHiragana.put("tsu", "'&#&12388;'");
-        tabHiragana.put("te", "'&#&12390;'");
-        tabHiragana.put("to", "'&#&12392;'");
-        tabHiragana.put("na", "'&#&12394;'");
-        tabHiragana.put("ni", "'&#&12395;'");
-        tabHiragana.put("nu", "'&#&12396;'");
-        tabHiragana.put("ne", "'&#&12397;'");
-        tabHiragana.put("no", "'&#&12398;'");
-        tabHiragana.put("ha", "'&#&12399;'");
-        tabHiragana.put("hi", "'&#&12402;'");
-        tabHiragana.put("fu", "'&#&12405;'");
-        tabHiragana.put("he", "'&#&12408;'");
-        tabHiragana.put("ho", "'&#&12411;'");
-        tabHiragana.put("ma", "'&#&12414;'");
-        tabHiragana.put("mi", "'&#&12415;'");
-        tabHiragana.put("mu", "'&#&12416;'");
-        tabHiragana.put("me", "'&#&12417;'");
-        tabHiragana.put("mo", "'&#&12418;'");
-        tabHiragana.put("ya", "'&#&12420;'");
-        tabHiragana.put("yu", "'&#&12422;'");
-        tabHiragana.put("yo", "'&#&12424;'");
-        tabHiragana.put("ra", "'&#&12425;'");
-        tabHiragana.put("ri", "'&#&12426;'");
-        tabHiragana.put("ru", "'&#&12427;'");
-        tabHiragana.put("re", "'&#&12428;'");
-        tabHiragana.put("ro", "'&#&12429;'");
-        tabHiragana.put("wa", "'&#&12431;'");
-        tabHiragana.put("wi", "'&#&12432;'");
-        tabHiragana.put("we", "'&#&12433;'");
-        tabHiragana.put("wo", "'&#&12434;'");
-        tabHiragana.put("ga", "'&#&12364;'");
-        tabHiragana.put("gi", "'&#&12366;'");
-        tabHiragana.put("gu", "'&#&12368;'");
-        tabHiragana.put("ge", "'&#&12370;'");
-        tabHiragana.put("go", "'&#&12372;'");
-        tabHiragana.put("za", "'&#&12374;'");
-        tabHiragana.put("ji", "'&#&12376;'");
-        tabHiragana.put("zu", "'&#&12378;'");
-        tabHiragana.put("ze", "'&#&12380;'");
-        tabHiragana.put("zo", "'&#&12382;'");
-        tabHiragana.put("da", "'&#&12384;'");
-        tabHiragana.put("dji", "'&#&12386;'");
-        tabHiragana.put("dzu", "'&#&12389;'");
-        tabHiragana.put("de", "'&#&12391;'");
-        tabHiragana.put("do", "'&#&12392;'");
-        tabHiragana.put("ba", "'&#&12400;'");
-        tabHiragana.put("bi", "'&#&12403;'");
-        tabHiragana.put("bu", "'&#&12406;'");
-        tabHiragana.put("be", "'&#&12409;'");
-        tabHiragana.put("bo", "'&#&12412;'");
-        tabHiragana.put("pa", "'&#&12401;'");
-        tabHiragana.put("pi", "'&#&12404;'");
-        tabHiragana.put("pu", "'&#&12407;'");
-        tabHiragana.put("pe", "'&#&12410;'");
-        tabHiragana.put("po", "'&#&12413;'");
+    private void remplirTabKatakana() {
+        tabKatakana.put("a", "&#12450;");
+        tabKatakana.put("i", "&#12452;");
+        tabKatakana.put("u", "&#12454;");
+        tabKatakana.put("e", "&#12456;");
+        tabKatakana.put("o", "&#12458;");
+        tabKatakana.put("ka", "&#12459;");
+        tabKatakana.put("ki", "&#12461;");
+        tabKatakana.put("ku", "'&#12463;");
+        tabKatakana.put("ke", "&#12465;");
+        tabKatakana.put("ko", "&#12467;");
+        tabKatakana.put("sa", "&#12469;");
+        tabKatakana.put("shi", "&#12471;");
+        tabKatakana.put("su", "&#12473;");
+        tabKatakana.put("se", "&#12475;");
+        tabKatakana.put("so", "&#12477;");
+        tabKatakana.put("ta", "&#12479;");
+        tabKatakana.put("chi", "&#12481;");
+        tabKatakana.put("tsu", "&#12484;");
+        tabKatakana.put("te", "&#12486;");
+        tabKatakana.put("to", "&#12488;");
+        tabKatakana.put("na", "&#12490;");
+        tabKatakana.put("ni", "&#12491;");
+        tabKatakana.put("nu", "&#12492;");
+        tabKatakana.put("ne", "&#12493;");
+        tabKatakana.put("no", "&#12494;");
+        tabKatakana.put("ha", "&#12495;");
+        tabKatakana.put("hi", "&#12498;");
+        tabKatakana.put("fu", "&#12501;");
+        tabKatakana.put("he", "&#12504;");
+        tabKatakana.put("ho", "&#12507;");
+        tabKatakana.put("ma", "&#12510;");
+        tabKatakana.put("mi", "&#12511;");
+        tabKatakana.put("mu", "&#12512;");
+        tabKatakana.put("me", "&#12513;");
+        tabKatakana.put("mo", "&#12514;");
+        tabKatakana.put("ya", "&#12516;");
+        tabKatakana.put("yu", "&#12518;");
+        tabKatakana.put("yo", "&#12520;");
+        tabKatakana.put("ra", "&#12521;");
+        tabKatakana.put("ri", "&#12522;");
+        tabKatakana.put("ru", "&#12523;");
+        tabKatakana.put("re", "&#12524;");
+        tabKatakana.put("ro", "&#12525;");
+        tabKatakana.put("wa", "&#12527;");
+        tabKatakana.put("wi", "&#12528;");
+        tabKatakana.put("we", "&#12529;");
+        tabKatakana.put("wo", "&#12530;");
+        tabKatakana.put("ga", "&#12460;");
+        tabKatakana.put("gi", "&#12462;");
+        tabKatakana.put("gu", "&#12464;");
+        tabKatakana.put("ge", "&#12466;");
+        tabKatakana.put("go", "&#12468;");
+        tabKatakana.put("za", "&#12470;");
+        tabKatakana.put("ji", "&#12472;");
+        tabKatakana.put("zu", "&#12474;");
+        tabKatakana.put("ze", "&#12476;");
+        tabKatakana.put("zo", "&#12478;");
+        tabKatakana.put("da", "&#12480;");
+        tabKatakana.put("dji", "&#12482;");
+        tabKatakana.put("dzu", "&#12485;");
+        tabKatakana.put("de", "&#12487;");
+        tabKatakana.put("do", "&#12489;");
+        tabKatakana.put("ba", "&#12496;");
+        tabKatakana.put("bi", "&#12499;");
+        tabKatakana.put("bu", "&#12502;");
+        tabKatakana.put("be", "&#12505;");
+        tabKatakana.put("bo", "&#12508;");
+        tabKatakana.put("pa", "&#12497;");
+        tabKatakana.put("pi", "&#12500;");
+        tabKatakana.put("pu", "&#12503;");
+        tabKatakana.put("pe", "&#12506;");
+        tabKatakana.put("po", "&#12509;");
+        tabKatakana.put("-", "         </dt>\n    </tr>\n    <tr>\n        <dt>");
+    }
+
+    @Override
+    public String toString() {
+        return syllabeUnicode;
     }
 
 }
