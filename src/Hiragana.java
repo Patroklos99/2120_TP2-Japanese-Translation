@@ -15,7 +15,7 @@ public class Hiragana {
         if (tabHiragana.containsKey(syllabe)) {
             syllabeUnicode = tabHiragana.get(syllabe);
         } else {
-            System.out.println("Une des syllabes Hiragana n'est pas valide, le programme se terminera");
+            System.out.println("Une des syllabes Hiragana n'est pas valide, le programme se terminera.");
             System.exit(-1);
         }
     }

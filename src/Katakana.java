@@ -16,7 +16,7 @@ public class Katakana {
         if (tabKatakana.containsKey(syllabe)) {
             syllabeUnicode = tabKatakana.get(syllabe);
         } else {
-            System.out.println("Une des syllabes katakana n'est pas valide, le programme se terminera");
+            System.out.println("Une des syllabes katakana n'est pas valide, le programme se terminera.");
             System.exit(-1);
         }
     }
