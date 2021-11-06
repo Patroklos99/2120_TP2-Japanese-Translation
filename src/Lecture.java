@@ -27,7 +27,7 @@ public class Lecture {
             Path path = FileSystems.getDefault().getPath(nom);
             verifierFichier(path);
             Scanner sc = new Scanner(Files.newBufferedReader(path));
-            ecrirePhrases(sc, tab);
+            ajouterPhrasesTab(sc, tab);
             validerPhrases(tab);
             sc.close();
         } catch (InvalidPathException e) {
@@ -69,11 +69,12 @@ public class Lecture {
             msgErrFichier();
         if (!file.toString().matches("^.*\\.(txt)$")) {
             System.out.println("Le fichier nest pas de format \".txt\" Le programme se terminera, bonne journnée.");
+            System.exit(-1);
         }
         fichierVide(file);
     }
 
-    public static void ecrirePhrases(Scanner sc, ArrayList tab) {
+    public static void ajouterPhrasesTab(Scanner sc, ArrayList tab) {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
         }
