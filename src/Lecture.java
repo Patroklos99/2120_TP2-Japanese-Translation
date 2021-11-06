@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -48,6 +49,7 @@ public class Lecture {
     }
 
     private static void enleverEspaces(ArrayList tab) {
+        tab.removeAll(Collections.singleton(""));
         for (int i = 0; i < tab.size(); i++) {
             String ligne = tab.get(i).toString();
             ligne = ligne.replaceAll(" ", "");
@@ -75,6 +77,7 @@ public class Lecture {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
         }
+        System.out.println(tab);
     }
 
     private static void fichierVide(File file) {

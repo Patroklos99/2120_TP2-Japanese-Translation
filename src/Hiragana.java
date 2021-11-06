@@ -13,11 +13,10 @@ public class Hiragana {
 
     private void obtenirUnicode() {
         syllabe = syllabe.toLowerCase();
-        System.out.println("silaba Hiragana:      "+syllabe);
         if (tabHiragana.containsKey(syllabe)) {
             syllabeUnicode = tabHiragana.get(syllabe);
         } else {
-            System.out.println("La syllabe Hiragana ("+syllabe+ ") n'est pas valide, le programme se terminera. じゃあね!");
+            System.out.println("La syllabe Hiragana ("+syllabe+") nest pas valide, le programme se terminera. じゃあね!");
             System.exit(-1);
         }
     }
@@ -102,6 +101,4 @@ public class Hiragana {
     public String toString() {
         return syllabeUnicode;
     }
-
-
 }

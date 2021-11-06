@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a109ad65-16a7-40ca-8622-7bbec0ae1f07" name="Changes" comment="modif mineur">
+    <list default="true" id="a109ad65-16a7-40ca-8622-7bbec0ae1f07" name="Changes" comment="modif remplirtabsyllab() prend tous ce qui est defini comme une Syllabe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodes" beforeDir="false" afterPath="$PROJECT_DIR$/methodes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prog-TP2/Hiragana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prog-TP2/Hiragana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prog-TP2/Lecture.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prog-TP2/Lecture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Prog-TP2/Syllabe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Prog-TP2/Syllabe.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Hiragana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hiragana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Katakana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Katakana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lecture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lecture.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Syllabe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Syllabe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +25,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="20PrC45igRfmkYMl7hFJSxlkIIY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -35,6 +51,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -52,7 +70,7 @@
       <recent name="C:\Users\home\IdeaProjects\Prog-TP2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="Prog-TP2" />
@@ -60,22 +78,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Prog-TP2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Prog-TP2" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="text.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Prog2-TP2/Prog-TP2/text.html" useBuiltInWebServerPort="true">
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
+        <item itemvalue="JavaScript Debug.text.html" />
       </list>
     </recent_temporary>
   </component>
@@ -90,6 +99,8 @@
       <workItem from="1635956936394" duration="75000" />
       <workItem from="1635983299151" duration="1153000" />
       <workItem from="1635984551312" duration="32152000" />
+      <workItem from="1636209351412" duration="6685000" />
+      <workItem from="1636216082411" duration="21165000" />
     </task>
     <task id="LOCAL-00001" summary="ajout et modif majeurs mothod ecrirePhrases, validerPhrases et enleverEspaces.">
       <created>1635993283298</created>
@@ -126,7 +137,42 @@
       <option name="project" value="LOCAL" />
       <updated>1636041896179</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Ajout Hiragana toString">
+      <created>1636050016754</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1636050016754</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update .gitignore">
+      <created>1636050207813</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636050207813</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Plusieurs modif, +printUnicode +nettoyage sommaire des classes">
+      <created>1636080647192</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1636080647192</updated>
+    </task>
+    <task id="LOCAL-00009" summary="modif mineur des msg de print">
+      <created>1636080759588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636080759588</updated>
+    </task>
+    <task id="LOCAL-00010" summary="modif remplirtabsyllab() prend tous ce qui est defini comme une Syllabe">
+      <created>1636126728160</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1636126728160</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,12 +191,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="ajout et modif majeurs mothod ecrirePhrases, validerPhrases et enleverEspaces." />
     <MESSAGE value="Ajout fichierVide(file);" />
     <MESSAGE value="Ajout fichierVide(file)" />
     <MESSAGE value="modif validerPhrase" />
     <MESSAGE value="modif validerPhrase/regex" />
     <MESSAGE value="Ajout de HashMap, + class Hiragana" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de HashMap, + class Hiragana" />
+    <MESSAGE value="Ajout Hiragana toString" />
+    <MESSAGE value="update .gitignore" />
+    <MESSAGE value="Plusieurs modif, +printUnicode +nettoyage sommaire des classes" />
+    <MESSAGE value="modif mineur des msg de print" />
+    <MESSAGE value="modif remplirtabsyllab() prend tous ce qui est defini comme une Syllabe" />
+    <option name="LAST_COMMIT_MESSAGE" value="modif remplirtabsyllab() prend tous ce qui est defini comme une Syllabe" />
   </component>
 </project>
