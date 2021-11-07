@@ -95,6 +95,48 @@ public class Hiragana {
         tabHiragana.put("pe", "&#12410;");
         tabHiragana.put("po", "&#12413;");
         tabHiragana.put("n'", "&#12435;");
+        tabHiragana.put("kya", "&#12365;&#12419;");
+        tabHiragana.put("kyu", "&#12365;&#12421;");
+        tabHiragana.put("kyo", "&#12365;&#12423;");
+        tabHiragana.put("sya", "&#12375;&#12419;");
+        tabHiragana.put("syu", "&#12375;&#12421;");
+        tabHiragana.put("syo", "&#12375;&#12423;");
+        tabHiragana.put("cya", "&#12385;&#12419;");
+        tabHiragana.put("cyu", "&#12385;&#12421;");
+        tabHiragana.put("cyo", "&#12385;&#12423;");
+        tabHiragana.put("nya", "&#12395;&#12419;");
+        tabHiragana.put("nyu", "&#12395;&#12421;");
+        tabHiragana.put("nyo", "&#12395;&#12423;");
+        tabHiragana.put("hya", "&#12402;&#12419;");
+        tabHiragana.put("hyu", "&#12402;&#12421;");
+        tabHiragana.put("hyo", "&#12402;&#12423;");
+        tabHiragana.put("mya", "&#12415;&#12419;");
+        tabHiragana.put("myu", "&#12415;&#12421;");
+        tabHiragana.put("myo", "&#12415;&#12423;");
+        tabHiragana.put("rya", "&#12426;&#12419;");
+        tabHiragana.put("ryu", "&#12426;&#12421;");
+        tabHiragana.put("ryo", "&#12426;&#12423;");
+        tabHiragana.put("gya", "&#12366;&#12419;");
+        tabHiragana.put("gyu", "&#12366;&#12421;");
+        tabHiragana.put("gyo", "&#12366;&#12423;");
+        tabHiragana.put("jya", "&#12376;&#12419;");
+        tabHiragana.put("jyu", "&#12376;&#12421;");
+        tabHiragana.put("jyo", "&#12376;&#12423;");
+        tabHiragana.put("dya", "&#12386;&#12419;");
+        tabHiragana.put("dyu", "&#12386;&#12421;");
+        tabHiragana.put("dyo", "&#12386;&#12423;");
+        tabHiragana.put("bya", "&#12403;&#12419;");
+        tabHiragana.put("byu", "&#12403;&#12421;");
+        tabHiragana.put("byo", "&#12403;&#12423;");
+        tabHiragana.put("pya", "&#12404;&#12419;");
+        tabHiragana.put("pyu", "&#12404;&#12421;");
+        tabHiragana.put("pyo", "&#12404;&#12423;");
+
+
+
+
+
+
     }
 
     @Override
