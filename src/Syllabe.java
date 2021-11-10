@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Syllabe {
     private static final String HTML_DEBUT = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>TP 2</title>\n" +
-            "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n        <dt>\n";
+            "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n        <td>\n";
     private static final String HTML_FIN = "\n        </table>\n        <hr>\n    </body>\n</html>";
     protected ArrayList<String> tab;
     protected ArrayList<String> tabSyllabes = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Syllabe {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             bw.write(HTML_DEBUT);
             for (int i = 0; i < tabUnicodes.size(); i++) {
-                bw.write(tabUnicodes.get(i) + "\n");
+                bw.write("<td>" + tabUnicodes.get(i) + "</td>\n");
             }
             bw.write(HTML_FIN);
             bw.close();
@@ -67,6 +67,7 @@ public class Syllabe {
             } else
                 ajouterEspaceVide();
         }
+        System.out.println(tab);
     }
 
 
