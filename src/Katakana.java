@@ -96,7 +96,7 @@ public class Katakana {
         tabKatakana.put("po", "&#12509;");
         tabKatakana.put("n'", "&#12531;");
         tabKatakana.put("@", "&#12288;");
-        tabKatakana.put("-", "         </td>\n    </tr>\n    <tr>\n        <td>");
+        tabKatakana.put("-", "    </tr>\n    <tr>\n");
     }
 
     @Override

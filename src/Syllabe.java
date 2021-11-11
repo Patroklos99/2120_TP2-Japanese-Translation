@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Syllabe {
     private static final String HTML_DEBUT = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>TP 2</title>\n" +
-            "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n        <td>\n";
-    private static final String HTML_FIN = "\n        </table>\n        <hr>\n    </body>\n</html>";
+            "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n";
+    private static final String HTML_FIN = "        </table>\n        <hr>\n    </body>\n</html>";
     protected ArrayList<String> tab;
     protected ArrayList<String> tabSyllabes = new ArrayList<>();
     protected ArrayList<String> tabUnicodes = new ArrayList<>();
@@ -25,8 +25,11 @@ public class Syllabe {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             bw.write(HTML_DEBUT);
-            for (int i = 0; i < tabUnicodes.size(); i++) {
-                bw.write("<td>" + tabUnicodes.get(i) + "</td>\n");
+            for (String tabUnicode : tabUnicodes) {
+                if (!tabUnicode.equals("    </tr>\n    <tr>\n"))
+                    bw.write("        <td>" + tabUnicode + "</td>\n");
+                else
+                    bw.write(tabUnicode);
             }
             bw.write(HTML_FIN);
             bw.close();
