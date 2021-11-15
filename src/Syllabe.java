@@ -28,7 +28,6 @@ public class Syllabe {
     }
 
     private void ecrireHtml() {
-        System.out.println(obtenirNom(nom));
         File f = new File(obtenirNom(nom));
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
