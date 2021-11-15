@@ -8,9 +8,11 @@ public class Syllabe {
     protected ArrayList<String> tab;
     protected ArrayList<String> tabSyllabes = new ArrayList<>();
     protected ArrayList<String> tabUnicodes = new ArrayList<>();
+    protected String nom;
 
-    public Syllabe(ArrayList<String> tab) {
+    public Syllabe(ArrayList<String> tab, String nom) {
         this.tab = tab;
+        this.nom = nom;
         remplirTableaux();
     }
 
@@ -20,8 +22,14 @@ public class Syllabe {
         ecrireHtml();
     }
 
+    private String obtenirNom(String nom) {
+        String nouveauNom = nom.substring(0, nom.indexOf("."));
+        return nouveauNom = nouveauNom + ".html";
+    }
+
     private void ecrireHtml() {
-        File f = new File("./text.html");
+        System.out.println(obtenirNom(nom));
+        File f = new File(obtenirNom(nom));
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(f));
             bw.write(HTML_DEBUT);

@@ -57,6 +57,8 @@ public class Lecture {
         }
     }
 
+
+
     /**
      * Verifie si le fichier existe, appelle une autre methode pour l'arret du programme s'il n'existe pas!.
      *
