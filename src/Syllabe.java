@@ -1,42 +1,66 @@
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Classe qui contient toutes les methodes se rapportant aux syllabes
+ */
 public class Syllabe {
     private static final String HTML_DEBUT = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>TP 2</title>\n" +
             "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n";
     private static final String HTML_FIN = "        </table>\n        <hr>\n    </body>\n</html>";
     protected ArrayList<String> tab;
+    protected String nom;
     protected ArrayList<String> tabSyllabes = new ArrayList<>();
     protected ArrayList<String> tabUnicodes = new ArrayList<>();
-    protected String nom;
 
+
+    /**
+     * Construit de la classe syllabe, déclanche la methode primordiale.
+     *
+     * @param tab tableau contenant les lignes de textes du fichier recu.
+     * @param nom var contenant le nom du fichier recu.
+     */
     public Syllabe(ArrayList<String> tab, String nom) {
         this.tab = tab;
         this.nom = nom;
         remplirTableaux();
     }
 
+    /**
+     * Declanche les methodes principales de la classe. Remplir tab, trier et ecrire html.
+     */
     private void remplirTableaux() {
         validerTabNonVide();
         trierSyllabeAlphabets();
         ecrireHtml();
     }
 
+    /**
+     * Convertit le nom fichier recu en string "nomDuFichier.html"
+     *
+     * @param nom nom du fichier recu à modifier
+     * @return string de format nomDuFichier.html
+     */
     private String obtenirNom(String nom) {
         String nouveauNom = nom.substring(0, nom.indexOf("."));
-        return nouveauNom = nouveauNom + ".html";
+        return nouveauNom + ".html";
     }
 
+
+    /**
+     * Écrit le fichier de sortie html de bon format et ses unicodes.
+     * <code>file var qui aide à l'ecriture des strings dans .html</code>
+     */
     private void ecrireHtml() {
-        File f = new File(obtenirNom(nom));
+        File file = new File(obtenirNom(nom));
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(f));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             bw.write(HTML_DEBUT);
-            for (String tabUnicode : tabUnicodes) {
-                if (!tabUnicode.equals("    </tr>\n    <tr>\n"))
-                    bw.write("        <td>" + tabUnicode + "</td>\n");
+            for (String unicode : tabUnicodes) {
+                if (!unicode.equals("    </tr>\n    <tr>\n"))
+                    bw.write("        <td>" + unicode + "</td>\n");
                 else
-                    bw.write(tabUnicode);
+                    bw.write(unicode);
             }
             bw.write(HTML_FIN);
             bw.close();
@@ -45,6 +69,9 @@ public class Syllabe {
         }
     }
 
+    /**
+     * Trie les syllabes et ecrit les unicode dans tabUnicodes
+     */
     private void trierSyllabeAlphabets() {
         for (String syllabe : tabSyllabes) {
             if (Character.toString(syllabe.charAt(0)).matches("[a-z]")) {
@@ -62,7 +89,7 @@ public class Syllabe {
     }
 
     private void validerTabNonVide() {
-        while (!elements()) {
+        while (!elementVide()) {
             retirerBlocTexte();
             ajouterFinLigne();
         }
@@ -77,7 +104,7 @@ public class Syllabe {
             } else
                 ajouterEspaceVide();
         }
-        System.out.println(tab);
+        //System.out.println(tab);
     }
 
 
@@ -117,7 +144,7 @@ public class Syllabe {
         tabSyllabes.add("@");
     }
 
-    private boolean elements() {
+    private boolean elementVide() {
         boolean decision = true;
         for (String s : tab) {
             if (!(s.length() == 0)) {
@@ -128,4 +155,3 @@ public class Syllabe {
     }
 
 }
-

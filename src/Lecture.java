@@ -38,6 +38,11 @@ public class Lecture {
         return tab;
     }
 
+    /**
+     * Valide que seulement les characteres valides soient présents dans le fichier fourni
+     *
+     * @param tab tableau contenant les phrases du fichier à verifier.
+     */
     private static void validerPhrases(ArrayList tab) {
         enleverEspaces(tab);
         for (Object o : tab) {
@@ -48,6 +53,11 @@ public class Lecture {
         }
     }
 
+    /**
+     * Enleve les espaces de chaque element(texte) du tableau.
+     *
+     * @param tab tableau contenant les phrases du fichier à verifier.
+     */
     private static void enleverEspaces(ArrayList tab) {
         tab.removeAll(Collections.singleton(""));
         for (int i = 0; i < tab.size(); i++) {
@@ -57,10 +67,8 @@ public class Lecture {
         }
     }
 
-
-
     /**
-     * Verifie si le fichier existe, appelle une autre methode pour l'arret du programme s'il n'existe pas!.
+     * Verifie si fichier existe si bon format, appelle autre methode pour l'arret du programme s'il n'existe pas.
      *
      * @param path contient le chemin relatif du fichier fourni.
      *             <code>file, contient le chemin relatif du fichier fourni, sert à verifier l'existance de celui-ci</code>
@@ -76,6 +84,12 @@ public class Lecture {
         fichierVide(file);
     }
 
+    /**
+     * Ajoute la ligne de texte du fichier fourni dans le tableau.
+     *
+     * @param sc  var qui aide à la saisie des lignes des textes.
+     * @param tab tableau ou les lignes de textes seront stockées.
+     */
     public static void ajouterPhrasesTab(Scanner sc, ArrayList tab) {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
@@ -83,6 +97,11 @@ public class Lecture {
         System.out.println(tab);
     }
 
+    /**
+     * Verifie si le fichier est vide, arrête le programme si cest le cas.
+     *
+     * @param file var utilisée pour verifier si le fichier est vide.
+     */
     private static void fichierVide(File file) {
         if (file.length() == 0) {
             System.out.println("Le fichier semble être vide, le programme se terminera.");
@@ -91,8 +110,7 @@ public class Lecture {
     }
 
     /**
-     * Affiche msg d'erreur si le fichier n'existe pas et informe l'usager des possibles erreurs dans la saisie.
-     * Termine aussi le programme.
+     * Affiche msg d'erreur si le fichier n'existe pas et termine le programme.
      */
     public static void msgErrFichier() {
         System.out.println("Erreur, le fichier ne semble pas exister, le programme terminera." +
@@ -101,6 +119,9 @@ public class Lecture {
         System.exit(-1);
     }
 
+    /**
+     * Affiche msg d'erreur, Termine le programme.
+     */
     public static void finirProgramme() {
         System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se terminera.");
         System.exit(-1);

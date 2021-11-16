@@ -16,7 +16,7 @@ public class Katakana {
         if (tabKatakana.containsKey(syllabe)) {
             syllabeUnicode = tabKatakana.get(syllabe);
         } else {
-            System.out.println("La syllabe katakana ("+syllabe+") nest pas valide, le programme se terminera. じゃあね!");
+            System.out.println("La syllabe katakana (" + syllabe + ") nest pas valide, le programme se terminera. じゃあね!");
             System.exit(-1);
         }
     }
@@ -97,6 +97,42 @@ public class Katakana {
         tabKatakana.put("n'", "&#12531;");
         tabKatakana.put("@", "&#12288;");
         tabKatakana.put("-", "    </tr>\n    <tr>\n");
+        tabKatakana.put("kya", "&#12461;&#12515;");
+        tabKatakana.put("kyu", "&#12461;&#12517;");
+        tabKatakana.put("kyo", "&#12461;&#12519;");
+        tabKatakana.put("sya", "&#12461;&#12515;");
+        tabKatakana.put("syu", "&#12461;&#12517;");
+        tabKatakana.put("syo", "&#12461;&#12519;");
+        tabKatakana.put("cya", "&#12461;&#12515;");
+        tabKatakana.put("cyu", "&#12461;&#12517;");
+        tabKatakana.put("cyo", "&#12461;&#12519;");
+        tabKatakana.put("nya", "&#12461;&#12515;");
+        tabKatakana.put("nyu", "&#12461;&#12517;");
+        tabKatakana.put("nyo", "&#12461;&#12519;");
+        tabKatakana.put("hya", "&#12461;&#12515;");
+        tabKatakana.put("hyu", "&#12461;&#12517;");
+        tabKatakana.put("hyo", "&#12461;&#12519;");
+        tabKatakana.put("mya", "&#12461;&#12515;");
+        tabKatakana.put("myu", "&#12461;&#12517;");
+        tabKatakana.put("myo", "&#12461;&#12519;");
+        tabKatakana.put("rya", "&#12461;&#12515;");
+        tabKatakana.put("ryu", "&#12461;&#12517;");
+        tabKatakana.put("ryo", "&#12461;&#12519;");
+        tabKatakana.put("gya", "&#12461;&#12515;");
+        tabKatakana.put("gyu", "&#12461;&#12517;");
+        tabKatakana.put("gyo", "&#12461;&#12519;");
+        tabKatakana.put("jya", "&#12461;&#12515;");
+        tabKatakana.put("jyu", "&#12461;&#12517;");
+        tabKatakana.put("jyo", "&#12461;&#12519;");
+        tabKatakana.put("dya", "&#12461;&#12515;");
+        tabKatakana.put("dyu", "&#12461;&#12517;");
+        tabKatakana.put("dyo", "&#12461;&#12519;");
+        tabKatakana.put("bya", "&#12461;&#12515;");
+        tabKatakana.put("byu", "&#12461;&#12517;");
+        tabKatakana.put("byo", "&#12461;&#12519;");
+        tabKatakana.put("pya", "&#12461;&#12515;");
+        tabKatakana.put("pyu", "&#12461;&#12517;");
+        tabKatakana.put("pyo", "&#12461;&#12519;");
     }
 
     @Override

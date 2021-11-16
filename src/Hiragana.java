@@ -16,7 +16,7 @@ public class Hiragana {
         if (tabHiragana.containsKey(syllabe)) {
             syllabeUnicode = tabHiragana.get(syllabe);
         } else {
-            System.out.println("La syllabe Hiragana ("+syllabe+") nest pas valide, le programme se terminera. じゃあね!");
+            System.out.println("La syllabe Hiragana (" + syllabe + ") nest pas valide, le programme se terminera. じゃあね!");
             System.exit(-1);
         }
     }
@@ -131,11 +131,6 @@ public class Hiragana {
         tabHiragana.put("pya", "&#12404;&#12419;");
         tabHiragana.put("pyu", "&#12404;&#12421;");
         tabHiragana.put("pyo", "&#12404;&#12423;");
-
-
-
-
-
 
     }
 
