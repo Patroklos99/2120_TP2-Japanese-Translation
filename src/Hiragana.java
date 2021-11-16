@@ -1,16 +1,27 @@
 import java.util.*;
 
+/**
+ * Classe contenant toutes les methodes se rapportant aux syllabes Hiragana.
+ */
 public class Hiragana {
     protected String syllabe;
     protected String syllabeUnicode;
     protected Map<String, String> tabHiragana = new HashMap<>();
 
+    /**
+     * Construit la classe katakana, declanche methodes primordiales.
+     *
+     * @param syllabe syllabe à structure valide à trouver dans le hashMap.
+     */
     public Hiragana(String syllabe) {
         this.syllabe = syllabe;
         remplirTabHiragana();
         obtenirUnicode();
     }
 
+    /**
+     * Obtient unicode, s'il existe , à partir de la syllabe fournie et le place dans une variable.
+     */
     private void obtenirUnicode() {
         syllabe = syllabe.toLowerCase();
         if (tabHiragana.containsKey(syllabe)) {
@@ -21,6 +32,9 @@ public class Hiragana {
         }
     }
 
+    /**
+     * Crée un hashmap de toutes les syllabes Hiragana valides avec leur unicodes.
+     */
     private void remplirTabHiragana() {
         tabHiragana.put("a", "&#12354;");
         tabHiragana.put("i", "&#12356;");

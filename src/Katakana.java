@@ -1,16 +1,28 @@
 import java.util.*;
 
+/**
+ * Classe contenant toutes les methodes se rapportant aux syllabes katakana.
+ */
 public class Katakana {
     protected String syllabe;
     protected String syllabeUnicode;
     protected Map<String, String> tabKatakana = new HashMap<>();
 
+    /**
+     * Construit la classe katakana, declanche methodes primordiales.
+     *
+     * @param syllabe syllabe à structure valide à trouver dans le hashMap.
+     */
     public Katakana(String syllabe) {
         this.syllabe = syllabe;
         remplirTabKatakana();
         obtenirUnicode();
     }
 
+
+    /**
+     * Obtient unicode, s'il existe , à partir de la syllabe fournie et le place dans une variable.
+     */
     private void obtenirUnicode() {
         syllabe = syllabe.toLowerCase();
         if (tabKatakana.containsKey(syllabe)) {
@@ -21,6 +33,10 @@ public class Katakana {
         }
     }
 
+
+    /**
+     * Crée un hashmap de toutes les syllabes katakana valides avec leur unicodes.
+     */
     private void remplirTabKatakana() {
         tabKatakana.put("a", "&#12450;");
         tabKatakana.put("i", "&#12452;");

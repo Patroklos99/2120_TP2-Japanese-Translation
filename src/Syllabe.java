@@ -15,7 +15,7 @@ public class Syllabe {
 
 
     /**
-     * Construit de la classe syllabe, déclanche la methode primordiale.
+     * Construit la classe syllabe, déclanche la methode primordiale.
      *
      * @param tab tableau contenant les lignes de textes du fichier recu.
      * @param nom var contenant le nom du fichier recu.
@@ -70,7 +70,7 @@ public class Syllabe {
     }
 
     /**
-     * Trie les syllabes et ecrit les unicode dans tabUnicodes
+     * Trie les syllabes et ecrit leur unicodes dans tabUnicodes
      */
     private void trierSyllabeAlphabets() {
         for (String syllabe : tabSyllabes) {
@@ -84,10 +84,16 @@ public class Syllabe {
         }
     }
 
+    /**
+     * Ajoute caractere de repere qui equivaut à fin de ligne dans le HashMap.
+     */
     private void ajouterFinLigne() {
         tabSyllabes.add("-");
     }
 
+    /**
+     * Valide que le tableau ne soit pas vide, si non declanche retirerBlocTexte
+     */
     private void validerTabNonVide() {
         while (!elementVide()) {
             retirerBlocTexte();
@@ -96,18 +102,29 @@ public class Syllabe {
         System.out.println(tabSyllabes);
     }
 
+
+    /**
+     * Retire et transforme en String les element du tableau de textes.
+     */
     private void retirerBlocTexte() {
         for (int i = 0; i < tab.size(); i++) {
             if (!(tab.get(i).length() == 0)) {
                 String ligne = tab.get(i);
                 ajouterBlocSyllabeTab(ligne, i);
             } else
+                //ajout du caractere representant un espace vide dans le HashMap
                 ajouterEspaceVide();
         }
         //System.out.println(tab);
     }
 
 
+    /**
+     * Ajoute les differents types de syllabes valides dans tabSyllabes.
+     *
+     * @param ligne String de la ligne de texte utilisée pour trouver les syllabes
+     * @param i position dans l'arraylist du tableau de textes fournis.
+     */
     private void ajouterBlocSyllabeTab(String ligne, int i) {
         if (Character.toString(ligne.charAt(0)).matches("[aeiou]|[AEIOU]|[-]")) {
             tabSyllabes.add(Character.toString(ligne.charAt(0)));
@@ -128,18 +145,41 @@ public class Syllabe {
         }
     }
 
+
+    /**
+     * Reecrit l'element texte du tableau tab en elevant la syllabe à trois chars valide.
+     *
+     * @param ligne String (element Tab) à modifier
+     * @param i position de l'element Tab traité.
+     */
     private void reecrireElementTextTrois(String ligne, int i) {
         tab.set(i, ligne.substring(3));
     }
 
+    /**
+     * Reecrit l'element texte du tableau tab en elevant la syllabe à deux chars valide.
+     *
+     * @param ligne String (element Tab) à modifier
+     * @param i position de l'element Tab traité.
+     */
     private void reecrireElementTextDeux(String ligne, int i) {
         tab.set(i, ligne.substring(2));
     }
 
+    /**
+     * Reecrit l'element texte du tableau tab en elevant la syllabe à un char valide.
+     *
+     * @param ligne String (element Tab) à modifier
+     * @param i position de l'element Tab traité.
+     */
     private void reecrireElementTextUn(String ligne, int i) {
         tab.set(i, ligne.substring(1));
     }
 
+
+    /**
+     * Ajout caractere de repere qui equivaut à espace vide dans le HashMap.
+     */
     private void ajouterEspaceVide() {
         tabSyllabes.add("@");
     }
@@ -147,9 +187,8 @@ public class Syllabe {
     private boolean elementVide() {
         boolean decision = true;
         for (String s : tab) {
-            if (!(s.length() == 0)) {
+            if (!(s.length() == 0))
                 decision = false;
-            }
         }
         return decision;
     }
