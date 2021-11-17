@@ -47,8 +47,7 @@ public class Lecture {
         enleverEspaces(tab);
         for (Object o : tab) {
             if (!o.toString().matches("^([a-zA-Z]+([']+|[’]+)?([a-zA-Z]+)?)+") ||
-                    Character.toString(o.toString().charAt(0)).matches("[']|[’]") ||
-                    Character.toString(o.toString().charAt(1)).matches("[']|[’]"))
+                    Character.toString(o.toString().charAt(0)).matches("[']|[’]"))
                 finirProgramme();
         }
     }
@@ -123,7 +122,7 @@ public class Lecture {
      * Affiche msg d'erreur, Termine le programme.
      */
     public static void finirProgramme() {
-        System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se terminera.");
+        System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se termineraaaaa.");
         System.exit(-1);
     }
 

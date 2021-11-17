@@ -23,7 +23,9 @@ public class Syllabe {
     public Syllabe(ArrayList<String> tab, String nom) {
         this.tab = tab;
         this.nom = nom;
+        System.out.println(tab);
         remplirTableaux();
+
     }
 
     /**
@@ -115,7 +117,7 @@ public class Syllabe {
                 //ajout du caractere representant un espace vide dans le HashMap
                 ajouterEspaceVide();
         }
-        //System.out.println(tab);
+        System.out.println(tab);
     }
 
 
@@ -136,7 +138,7 @@ public class Syllabe {
             tabSyllabes.add("" + (ligne.charAt(0)) + (ligne.charAt(1)));
             reecrireElementTextDeux(ligne, i);
         } else if (Character.toString(ligne.charAt(2)).matches("[aeiou]|[AEIOU]") &&
-                Character.toString(ligne.charAt(1)).matches("[yhs]|[YHS]")) {
+                Character.toString(ligne.charAt(1)).matches("[yhjs]|[YHJS]")) {
             tabSyllabes.add("" + (ligne.charAt(0)) + (ligne.charAt(1)) + ((ligne.charAt(2))));
             reecrireElementTextTrois(ligne, i);
         } else {
