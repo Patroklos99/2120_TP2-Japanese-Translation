@@ -111,7 +111,7 @@ public class Katakana {
         tabKatakana.put("pe", "&#12506;");
         tabKatakana.put("po", "&#12509;");
         tabKatakana.put("n'", "&#12531;");
-        tabKatakana.put("@", "&#12288;");
+        tabKatakana.put("@", "");
         tabKatakana.put("-", "    </tr>\n    <tr>\n");
         tabKatakana.put("kya", "&#12461;&#12515;");
         tabKatakana.put("kyu", "&#12461;&#12517;");
@@ -151,6 +151,11 @@ public class Katakana {
         tabKatakana.put("pyo", "&#12500;&#12519;");
     }
 
+    /**
+     * Retourne l'unicode trouvé sous formé String
+     *
+     * @return Unicode correspondant à la syllabe
+     */
     @Override
     public String toString() {
         return syllabeUnicode;

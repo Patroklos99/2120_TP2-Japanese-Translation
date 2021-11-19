@@ -148,6 +148,11 @@ public class Hiragana {
 
     }
 
+    /**
+     * Retourne l'unicode trouvé sous formé String
+     *
+     * @return Unicode correspondant à la syllabe
+     */
     @Override
     public String toString() {
         return syllabeUnicode;

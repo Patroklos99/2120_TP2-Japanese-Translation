@@ -23,7 +23,6 @@ public class Syllabe {
     public Syllabe(ArrayList<String> tab, String nom) {
         this.tab = tab;
         this.nom = nom;
-        System.out.println(tab);
         remplirTableaux();
 
     }
@@ -101,7 +100,7 @@ public class Syllabe {
             retirerBlocTexte();
             ajouterFinLigne();
         }
-        System.out.println(tabSyllabes);
+        //System.out.println(tabSyllabes);
     }
 
 
@@ -117,7 +116,7 @@ public class Syllabe {
                 //ajout du caractere representant un espace vide dans le HashMap
                 ajouterEspaceVide();
         }
-        System.out.println(tab);
+        //System.out.println(tab);
     }
 
 
@@ -125,7 +124,7 @@ public class Syllabe {
      * Ajoute les differents types de syllabes valides dans tabSyllabes.
      *
      * @param ligne String de la ligne de texte utilisée pour trouver les syllabes
-     * @param i position dans l'arraylist du tableau de textes fournis.
+     * @param i     position dans l'arraylist du tableau de textes fournis.
      */
     private void ajouterBlocSyllabeTab(String ligne, int i) {
         if (Character.toString(ligne.charAt(0)).matches("[aeiou]|[AEIOU]|[-]")) {
@@ -152,7 +151,7 @@ public class Syllabe {
      * Reecrit l'element texte du tableau tab en elevant la syllabe à trois chars valide.
      *
      * @param ligne String (element Tab) à modifier
-     * @param i position de l'element Tab traité.
+     * @param i     position de l'element Tab traité.
      */
     private void reecrireElementTextTrois(String ligne, int i) {
         tab.set(i, ligne.substring(3));
@@ -162,7 +161,7 @@ public class Syllabe {
      * Reecrit l'element texte du tableau tab en elevant la syllabe à deux chars valide.
      *
      * @param ligne String (element Tab) à modifier
-     * @param i position de l'element Tab traité.
+     * @param i     position de l'element Tab traité.
      */
     private void reecrireElementTextDeux(String ligne, int i) {
         tab.set(i, ligne.substring(2));
@@ -172,7 +171,7 @@ public class Syllabe {
      * Reecrit l'element texte du tableau tab en elevant la syllabe à un char valide.
      *
      * @param ligne String (element Tab) à modifier
-     * @param i position de l'element Tab traité.
+     * @param i     position de l'element Tab traité.
      */
     private void reecrireElementTextUn(String ligne, int i) {
         tab.set(i, ligne.substring(1));
@@ -186,6 +185,12 @@ public class Syllabe {
         tabSyllabes.add("@");
     }
 
+
+    /**
+     * Verifie si l'element (i) du tab est vide
+     *
+     * @return bouleen dependant si l'element est vide
+     */
     private boolean elementVide() {
         boolean decision = true;
         for (String s : tab) {

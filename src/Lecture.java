@@ -45,11 +45,16 @@ public class Lecture {
      */
     private static void validerPhrases(ArrayList tab) {
         enleverEspaces(tab);
+        reoordonerTab(tab);
         for (Object o : tab) {
             if (!o.toString().matches("^([a-zA-Z]+([']+|[’]+)?([a-zA-Z]+)?)+") ||
                     Character.toString(o.toString().charAt(0)).matches("[']|[’]"))
                 finirProgramme();
         }
+    }
+
+    private static void reoordonerTab(ArrayList tab) {
+        Collections.reverse(tab);
     }
 
     /**
@@ -93,7 +98,6 @@ public class Lecture {
         while (sc.hasNextLine()) {
             tab.add(sc.nextLine());
         }
-        System.out.println(tab);
     }
 
     /**
