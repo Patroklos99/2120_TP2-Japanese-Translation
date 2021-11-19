@@ -4,9 +4,9 @@ import java.util.*;
  * Classe contenant toutes les methodes se rapportant aux syllabes Hiragana.
  */
 public class Hiragana {
-    protected String syllabe;
-    protected String syllabeUnicode;
-    protected Map<String, String> tabHiragana = new HashMap<>();
+    private String syllabe;
+    private String syllabeUnicode;
+    private Map<String, String> tabHiragana = new HashMap<>();
 
     /**
      * Construit la classe katakana, declanche methodes primordiales.

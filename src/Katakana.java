@@ -4,9 +4,9 @@ import java.util.*;
  * Classe contenant toutes les methodes se rapportant aux syllabes katakana.
  */
 public class Katakana {
-    protected String syllabe;
-    protected String syllabeUnicode;
-    protected Map<String, String> tabKatakana = new HashMap<>();
+    private String syllabe;
+    private String syllabeUnicode;
+    private Map<String, String> tabKatakana = new HashMap<>();
 
     /**
      * Construit la classe katakana, declanche methodes primordiales.

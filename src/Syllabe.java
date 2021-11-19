@@ -8,10 +8,10 @@ public class Syllabe {
     private static final String HTML_DEBUT = "<!DOCTYPE html>\n<html>\n    <head>\n        <title>TP 2</title>\n" +
             "    </head>\n    <body>\n        <hr>\n        <table>\n    <tr>\n";
     private static final String HTML_FIN = "        </table>\n        <hr>\n    </body>\n</html>";
-    protected ArrayList<String> tab;
-    protected String nom;
-    protected ArrayList<String> tabSyllabes = new ArrayList<>();
-    protected ArrayList<String> tabUnicodes = new ArrayList<>();
+    private ArrayList<String> tab;
+    private String nom;
+    private ArrayList<String> tabSyllabes = new ArrayList<>();
+    private ArrayList<String> tabUnicodes = new ArrayList<>();
 
 
     /**
