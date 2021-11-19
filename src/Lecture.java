@@ -126,7 +126,7 @@ public class Lecture {
      * Affiche msg d'erreur, Termine le programme.
      */
     public static void finirProgramme() {
-        System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se termineraaaaa.");
+        System.out.println("Erreur, Il y a un objet inattendu dans votre liste, le programme se terminera.");
         System.exit(-1);
     }
 
